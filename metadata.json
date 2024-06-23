@@ -1,0 +1,7 @@
+{
+    "name": "WeedClient",
+    "creator": "GreenV1 & X45K",
+    "description": "Skyblock qol client",
+    "version": "1.0.0",
+    "entry": "index.js"
+  }
