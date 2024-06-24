@@ -1,4 +1,4 @@
-/// <reference types="../../CTAutocomplete" />
+/* /// <reference types="../../CTAutocomplete" />
 import Config from "../Config"
 import { settings } from "../commands/gui"
 
@@ -141,4 +141,4 @@ register('GuiClosed', () => {
     inTerm = false
     q = []
   }
-});
+}); */

@@ -154,32 +154,32 @@ class Config {
     })
     toggleSprintText = "";
 
-    @SwitchProperty({
-        name: "Auto Harp",
-        description: "Automatically completes harp. (Works well with living wifi)",
-        category: "General",
-        subcategory: "Auto Harp"
-    })
-    autoharp = false;
-
-
     // ---------------------------------------------------------------
     // Dungeons
 
     @SwitchProperty({
-        name: "Bar Phase",
-        description: "Phases you through bars when walking against them",
+        name: "Dungeons Death Messages",
+        description: "Send a message in partychat when someone dies in a dungeon",
         category: "Dungeons",
-        subcategory: "Bar Phase"
+        subcategory: "General"
     })
-    guibarphase = false;
+    deathMessage = false;
+
+    @TextProperty({
+        name: "Death Message Text",
+        description: "The text sent on dungeon death.\nUse {name} to use the dead player's name.\nUse a comma to use many messages.",
+        category: "Dungeons",
+        subcategory: "General",
+        placeholder: "rip bozo"
+    })
+    deathMessageText = "rip bozo";
 
     // ---------------------------------------------------------------
     // Solvers
 
     // ---------------------------------------------------------------
     // Terminals
-
+/*
     @SliderProperty({
         name: "Auto Term Delay",
         description: "Delay between auto terminal clicking",
@@ -238,7 +238,7 @@ class Config {
         category: 'Terminals',
         subcategory: 'Auto Terms',
     })
-    startswith = true;
+    startswith = true; */
 
     @SwitchProperty({
         name: "&aTerminal Solvers",

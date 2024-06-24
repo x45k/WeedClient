@@ -7,8 +7,8 @@ import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
 import "./Features/ToggleSprint"
 import "./Features/AutoTerms"
-import "./Features/AutoHarp"
-import "./Features/BarPhase"
+import "./Features/TerminalSolver"
+import "./Features/deathmessages"
 
 
 
