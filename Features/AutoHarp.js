@@ -1,40 +1,38 @@
-import Config from "../Config";
+import { events, Player, windowClick, Blocks } from 'chatTriggersAPI';
 
 var inHarp = false;
 var lastInv = 0;
 
-register("GuiOpen", function(event) {
+events.guiOpen.on(event => {
     if (!Config.autoharp) return;
-    if (!(event.gui instanceof GuiChest) || !inSkyblock()) return;
+    if (!event.gui.isChest() || !inSkyblock()) return; // Check if GUI is a chest and player is in Skyblock
 
-    var container = event.gui.inventorySlots;
-    if (container instanceof ContainerChest) {
-        var chestName = container.lowerChestInventory.displayName.unformattedText;
-        if (chestName.startsWith("Harp -")) {
-            inHarp = true;
-        }
+    var chestName = event.gui.getInventory().getName();
+    if (chestName.startsWith("Harp -")) {
+        inHarp = true;
     }
 });
 
-register("Tick", function() {
+events.tick.on(() => {
     if (!Config.autoharp) return;
     if (!inHarp || Player.getPlayer() == null) return;
 
     var container = Player.getContainer();
-    if (!(container instanceof ContainerChest) || !container.name.startsWith("Harp -")) {
+    if (!container.isChest() || !container.getName().startsWith("Harp -")) {
         inHarp = false;
         return;
     }
 
-    var newHash = container.inventorySlots.slice(0, 36).map(function(slot) {
-        return slot.getStack() ? slot.getStack().getName() : "";
-    }).join("").hashCode();
+    var newHash = container.getInventory().getItems().slice(0, 36).map(slot => slot.getStack() ? slot.getStack().getDisplayName() : "").join("").hashCode();
 
     if (lastInv == newHash) return;
     lastInv = newHash;
-    
-    var quartzSlot = container.inventorySlots[36];
-    if (quartzSlot.getStack() && quartzSlot.getStack().getItem() instanceof ItemBlock && quartzSlot.getStack().getItem().getBlock() == Blocks.quartz_block) {
-        windowClick(container.windowId, quartzSlot.slotNumber, 0, true);
+
+    for (var ii = 0; ii < 7; ii++) {
+        var slot = container.getInventory().getItems()[37 + ii];
+        if (slot.getStack() && slot.getStack().getItem() instanceof Java.type('net.minecraft.item.ItemBlock') && slot.getStack().getItem().getBlock() == Blocks.quartz_block) {
+            windowClick(container.getWindowId(), slot.getSlotNumber(), 0, true);
+            break;
+        }
     }
 });
