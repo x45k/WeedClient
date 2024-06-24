@@ -155,6 +155,14 @@ class Config {
     // Dungeons
 
     @SwitchProperty({
+        name: "Ghost Blocks",
+        description: "Allows you to turn blocks into ghost blocks with a press of a key.",
+        category: "Dungeons",
+        subcategory: "Ghost Blocking"
+    })
+    ghostBlocksAreEnabled = false;
+
+    @SwitchProperty({
         name: "Dungeons Death Messages",
         description: "Send a message in partychat when someone dies in a dungeon",
         category: "Dungeons",
