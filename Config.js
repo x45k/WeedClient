@@ -166,6 +166,14 @@ class Config {
     // ---------------------------------------------------------------
     // Dungeons
 
+    @SwitchProperty({
+        name: "Bar Phase",
+        description: "Phases you through bars when walking against them",
+        category: "Dungeons",
+        subcategory: "Bar Phase"
+    })
+    guibarphase = false;
+
     // ---------------------------------------------------------------
     // Solvers
 
@@ -231,6 +239,46 @@ class Config {
         subcategory: 'Auto Terms',
     })
     startswith = true;
+
+    @SwitchProperty({
+        name: "&aTerminal Solvers",
+        description: "The main toggle to enable and disable terminal solvers.",
+        category: "Terminals",
+        subcategory: "Terminal Solvers"
+    })
+    terminalSolvers = false;
+
+    @SwitchProperty({
+        name: "Numbers Solver",
+        description: "Solver for the numbers terminal",
+        category: "Terminals",
+        subcategory: "Terminal Solvers"
+    })
+    numbersTerminalSolver = true;
+
+    @SwitchProperty({
+        name: "Colors Solver",
+        description: "Solver for the colors terminal",
+        category: "Terminals",
+        subcategory: "Terminal Solvers"
+    })
+    colorsTerminalSolver = true;
+
+    @SwitchProperty({
+        name: "Starts With Solver",
+        description: "Solver for the 'What starts with __' terminal",
+        category: "Terminals",
+        subcategory: "Terminal Solvers"
+    })
+    startsWithTerminalSolver = true;
+
+    @SwitchProperty({
+        name: "Rubix Terminal Solver",
+        description: "Solver for the 'Change all to same color' terminal",
+        category: "Terminals",
+        subcategory: "Terminal Solvers"
+    })
+    rubixTerminalSolver = true;
 
     // ---------------------------------------------------------------
     // GUI
