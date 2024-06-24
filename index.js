@@ -7,10 +7,6 @@ import "./Commands/setwindowname"
 
 import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
-<<<<<<< HEAD
-import "./Features/AutoTerms"
-=======
->>>>>>> 550e2adf4116ecd424ec8d9bd5e352d50bd0a379
 import "./Features/deathmessages"
 import "./Features/ghostblocks"
 register("worldLoad", () => {
