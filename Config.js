@@ -117,16 +117,16 @@ class Config {
     })
     enableAutoGfs = false;
 
+    @SwitchProperty({
+        name: "Loading Messages",
+        description: "Enable/disable the [WEED CLIENT] loading... messages.",
+        category: "General",
+        subcategory: "Loading"
+    })
+    enableloadingmessages = false;
+
     // ---------------------------------------------------------------
     // Dungeons
-
-    @SwitchProperty({
-        name: "Ghost Blocks",
-        description: "Allows you to turn blocks into ghost blocks with a press of a key.",
-        category: "Dungeons",
-        subcategory: "Ghost Blocking"
-    })
-    ghostBlocksAreEnabled = false;
 
     @SwitchProperty({
         name: "Dungeons Death Messages",
@@ -144,6 +144,22 @@ class Config {
         placeholder: "rip bozo"
     })
     deathMessageText = "rip bozo";
+
+    @SwitchProperty({
+        name: "Rng Announcer",
+        description: "Announces drops from RNG Meter to your party.",
+        category: "Dungeons",
+        subcategory: "RNG Announcing"
+    })
+    enableRngAnnounce = false;
+
+    @SwitchProperty({
+        name: "Announce to guild",
+        description: "Also announce RNG Meter drops to your guild. (Requires Rng Announcer to be on!)",
+        category: "Dungeons",
+        subcategory: "RNG Announcing"
+    })
+    enableGuildRngAnnounce = false;
 
     // ---------------------------------------------------------------
     // Solvers

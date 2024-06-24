@@ -9,7 +9,4 @@ import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
 import "./Features/deathmessages"
 import "./Features/ghostblocks"
-register("worldLoad", () => {
-    ChatLib.chat("&2[WEED CLIENT] &7loading...")
-    ChatLib.chat("&2[WEED CLIENT] &7loaded!")
-});
+import "./Features/loading"
