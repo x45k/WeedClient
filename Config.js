@@ -117,7 +117,6 @@ class Config {
     })
     enableAutoGfs = false;
 
-<<<<<<< HEAD
     @SwitchProperty({
         name: "Toggle Sprint",
         description: "Automatically Sprint",
@@ -152,13 +151,9 @@ class Config {
         placeholder: "Sprinting Enabled"
     })
     toggleSprintText = "";
-=======
->>>>>>> b40c49c8475c01273933af07791860a1ae89a81e
-
     // ---------------------------------------------------------------
     // Dungeons
 
-<<<<<<< HEAD
     @SwitchProperty({
         name: "Dungeons Death Messages",
         description: "Send a message in partychat when someone dies in a dungeon",
@@ -176,14 +171,11 @@ class Config {
     })
     deathMessageText = "rip bozo";
 
-=======
->>>>>>> b40c49c8475c01273933af07791860a1ae89a81e
     // ---------------------------------------------------------------
     // Solvers
 
     // ---------------------------------------------------------------
     // Terminals
-<<<<<<< HEAD
 /*
     @SliderProperty({
         name: "Auto Term Delay",
@@ -284,8 +276,6 @@ class Config {
         subcategory: "Terminal Solvers"
     })
     rubixTerminalSolver = true;
-=======
->>>>>>> b40c49c8475c01273933af07791860a1ae89a81e
 
     // ---------------------------------------------------------------
     // GUI
