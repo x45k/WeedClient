@@ -31,7 +31,7 @@ class Config {
 
         this.setCategoryDescription("General", 
             `
-            &2&l&nWeed
+            &a&l&nPlant
 
             ${lines.map(a => a !== "" ? padText(a + "&0", ".", maxLength) : a).join("\n")}
 
@@ -119,7 +119,7 @@ class Config {
 
     @SwitchProperty({
         name: "Loading Messages",
-        description: "Enable/disable the [WEED CLIENT] loading... messages.",
+        description: "Enable/disable the [PLANT CLIENT] loading... messages.",
         category: "General",
         subcategory: "Loading"
     })
@@ -155,7 +155,7 @@ class Config {
 
     @SwitchProperty({
         name: "Announce to guild",
-        description: "Also announce RNG Meter drops to your guild. (Requires Rng Announcer to be on!)",
+        description: "Also announce RNG Meter drops to you guild. (Requires Rng Announcer to be on!)",
         category: "Dungeons",
         subcategory: "RNG Announcing"
     })

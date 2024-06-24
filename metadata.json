@@ -1,7 +1,7 @@
 {
     "name": "WeedClient",
     "creator": "GreenV1 & X45K",
-    "description": "Skyblock qol client",
+    "description": "Skyblock chattriggers module.",
     "version": "1.0.0",
     "entry": "index.js",
     "requires": ["BloomCore", "Vigilance"]

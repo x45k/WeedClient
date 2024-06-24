@@ -1,6 +1,4 @@
-import Config from "../Config";
-
-const ghostBind = new KeyBind("Ghost Bind", Keyboard.KEY_NONE, "ChatTriggers")
+const ghostBind = new KeyBind("Ghost Blocks", Keyboard.KEY_NONE, "Ghost Blocking")
 
 const setToAir= (x, y, z) => {
     if (!World.isLoaded()) return
