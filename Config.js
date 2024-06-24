@@ -41,6 +41,8 @@ class Config {
 
     }
 
+    toggleSprintMove = new Gui()
+
    /*
     Example UI elements!
         @SwitchProperty({
@@ -116,6 +118,41 @@ class Config {
         subcategory: "Auto GFS"
     })
     enableAutoGfs = false;
+
+    @SwitchProperty({
+        name: "Toggle Sprint",
+        description: "Automatically Sprint",
+        category: "General",
+        subcategory: "Toggle Sprint"
+    })
+    toggleSprint = false;
+
+    @SwitchProperty({
+        name: "Toggle Sprint Overlay",
+        description: "Renders text on your screen when toggle sprint is enabled.",
+        category: "General",
+        subcategory: "Toggle Sprint"
+    })
+    toggleSprintOverlay = false;
+
+    @ButtonProperty({
+        name: "Move Toggle Sprint",
+        description: "Move",
+        category: "General",
+        subcategory: "Toggle Sprint"
+    })
+    MoveToggleSprint() {
+         this.toggleSprintMove.open()
+    };
+
+    @TextProperty({
+        name: "Sprinting Enabled Text",
+        category: "The text to be showed when toggle sprint is enabled",
+        category: "General",
+        subcategory: "Toggle Sprint",
+        placeholder: "Sprinting Enabled"
+    })
+    toggleSprintText = "";
 
 
     // ---------------------------------------------------------------
