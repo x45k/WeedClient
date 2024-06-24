@@ -109,6 +109,15 @@ class Config {
     // ---------------------------------------------------------------
     // General
 
+    @SwitchProperty({
+        name: "Auto GFS",
+        description: "Automatically gets pearls from sacks if you run out.",
+        category: "General",
+        subcategory: "Auto GFS"
+    })
+    enableAutoGfs = false;
+
+
     // ---------------------------------------------------------------
     // Dungeons
 

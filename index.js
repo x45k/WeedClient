@@ -4,6 +4,7 @@ import "./Commands/vclip"
 import "./Commands/ConfigGUI"
 
 import "./Features/PartyBlacklist"
+import "./Features/AutoGFS"
 
 
 
