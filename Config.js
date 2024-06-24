@@ -13,7 +13,7 @@ import {
     @NumberProperty,
 } from '../Vigilance/index';
 
-@Vigilant("WeedClient", "WeedClient", {
+@Vigilant("WeedClient", "§2Weed §aClient", {
     getCategoryComparator: () => (a, b) => {
         const categories = ["General", "Dungeons", "Solvers", "Terminals", "Gui", "Party Finder"];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
@@ -22,6 +22,10 @@ import {
 class Config {
     constructor() {
         this.initialize(this)
+
+        this.addDependency("Announce to guild", "Rng Announcer")
+        this.addDependency("Death Message Text","Dungeons Death Messages")
+        this.addDependency("Party Blacklist","Enable Blacklist")
 
         const lines = [
             "",
@@ -125,6 +129,14 @@ class Config {
     })
     enableloadingmessages = false;
 
+    @SwitchProperty({
+        name: "Copy Chat",
+        description: "Allows you to copy chat by holding left Ctrl + LMB",
+        category: "General",
+        subcategory: "Copy Chat"
+    })
+    enableCopyChat = false;
+
     // ---------------------------------------------------------------
     // Dungeons
 
@@ -160,6 +172,14 @@ class Config {
         subcategory: "RNG Announcing"
     })
     enableGuildRngAnnounce = false;
+
+    @SwitchProperty({
+        name: "Warp Assurance",
+        description: "Warps party when dungeon countdown starts.",
+        category: "Dungeons",
+        subcategory: "Warp Assurance"
+    })
+    enableWarpAssurance = false;
 
     // ---------------------------------------------------------------
     // Solvers
