@@ -147,12 +147,20 @@ class Config {
 
     @TextProperty({
         name: "Sprinting Enabled Text",
-        category: "The text to be showed when toggle sprint is enabled",
+        description: "The text to be showed when toggle sprint is enabled",
         category: "General",
         subcategory: "Toggle Sprint",
         placeholder: "Sprinting Enabled"
     })
     toggleSprintText = "";
+
+    @SwitchProperty({
+        name: "Auto Harp",
+        description: "Automatically completes harp. (Works well with living wifi)",
+        category: "General",
+        subcategory: "Auto Harp"
+    })
+    autoharp = false;
 
 
     // ---------------------------------------------------------------
@@ -163,6 +171,66 @@ class Config {
 
     // ---------------------------------------------------------------
     // Terminals
+
+    @SliderProperty({
+        name: "Auto Term Delay",
+        description: "Delay between auto terminal clicking",
+        category: "Terminals",
+        subcategory: "Auto Terms",
+        min: 1,
+        max: 500
+    })
+    autoTermDelay = 200;
+
+    @SelectorProperty({
+        name: 'Click Type',
+        description: 'Which click type auto terminals utilise',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+        options: ['Left', 'Middle', 'Shift'],
+    })
+    autoClickType = 0;
+
+    // TYPES OF TERMS
+    @CheckboxProperty({
+        name: 'Correct the Panes',
+        description: 'Correct all the panes terminal',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+    })
+    panes = true;
+
+    @CheckboxProperty({
+        name: 'Numbers',
+        description: 'Click on order terminal',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+    })
+    numbers = true;
+
+    @CheckboxProperty({
+        name: 'Same Color',
+        description: 'Change all to same color terminal',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+    })
+    rubix = true;
+
+    @CheckboxProperty({
+        name: 'Select of Same',
+        description: 'Correct all the panes terminal',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+    })
+    selectallthe = true;
+
+    @CheckboxProperty({
+        name: 'Starts With',
+        description: 'Starts with Terminal',
+        category: 'Terminals',
+        subcategory: 'Auto Terms',
+    })
+    startswith = true;
 
     // ---------------------------------------------------------------
     // GUI

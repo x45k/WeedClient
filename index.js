@@ -5,6 +5,9 @@ import "./Commands/ConfigGUI"
 
 import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
+import "./Features/ToggleSprint"
+import "./Features/AutoTerms"
+import "./Features/AutoHarp"
 
 
 
