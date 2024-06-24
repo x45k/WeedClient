@@ -29,6 +29,11 @@ class Config {
 
         const lines = [
             "",
+            "&a/setwindowname <name> &f- &2Sets the name of your minecraft window.",
+            "&a/hclipbo <blocks> &f- &2Moves player horizontally a set number of blocks.",
+            "&a/vclipbo <blocks> &f- &2Moves player vertically a set number of blocks.",
+            "&a/tpclip <x y z> &f- &2Moves player in any direction based on set coordinates.",
+            "&aGhost blocks &f- &2Deletes blocks infront of you &c(Set key in controls).",
             ""
         ]
         const maxLength = Math.max(...lines.map(a => Renderer.getStringWidth(a)))
