@@ -1,9 +1,9 @@
 import Config from "../Config"
 
 const setToEnderChest = (x, y, z) => {
-    if (!World.isLoaded()) return;
+    if (!World.isLoaded() || !Config.clipGhostBlocks) return;
     const pos = new BlockPos(x, y, z);
-    const enderChestBlockState = net.minecraft.init.Blocks.field_150477_bB.func_176223_P(); // Correct ender chest block state
+    const enderChestBlockState = net.minecraft.init.Blocks.field_150477_bB.func_176223_P();
     Client.getMinecraft().func_71410_x().field_71441_e.func_175656_a(pos.toMCBlock(), enderChestBlockState);
 };
 
@@ -22,7 +22,6 @@ const coordsList = [
 register('tick', () => {
     coordsList.forEach(coords => {
         coords.forEach(coord => {
-            if (!Config.clipGhostBlocks) return
             setToEnderChest(coord.x, coord.y, coord.z);
         });
     });

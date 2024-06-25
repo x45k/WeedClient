@@ -1,12 +1,13 @@
 import Config from "../Config"
 
 const setToAir = (x, y, z) => {
-    if (!World.isLoaded()) return;
+    if (!World.isLoaded() || !Config.clipGhostBlocks) return;
     const pos = new BlockPos(x * 1, y * 1, z * 1);
     Client.getMinecraft().func_71410_x().field_71441_e.func_175698_g(pos.toMCBlock());
 }
 
 const coordsList = [
+    [
         { x: 88, y: 220, z: 61 },
         { x: 88, y: 219, z: 61 },
         { x: 88, y: 218, z: 61 },
@@ -112,12 +113,12 @@ const coordsList = [
         { x: 54, y: 68, z: 59 },
         { x: 55, y: 68, z: 59 },
         { x: 56, y: 68, z: 59 }
+    ]
 ];
 
 register('tick', () => {
     coordsList.forEach(coords => {
         coords.forEach(coord => {
-            if (!Config.clipGhostBlocks) return
             setToAir(coord.x, coord.y, coord.z);
         });
     });
