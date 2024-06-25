@@ -8,4 +8,4 @@ register("command", (x,y,z) => {
       z*=1
       Client.getMinecraft().func_71410_x().field_71439_g.func_70107_b(px+x,py+y,pz+z)
     }
-}).setName("tpclip")
+}).setName("tpclip").setAliases(["tpc"])

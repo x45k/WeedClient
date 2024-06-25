@@ -16,4 +16,4 @@ register("command", (d, o) => {
     } else {
         Client.getMinecraft().field_71439_g.func_70107_b(px + newx, py, pz + newz);
     }
-}).setName("hclipbo");
+}).setName("hclipbo").setAliases(["hclip", "hc"])
