@@ -194,6 +194,14 @@ class Config {
     // ---------------------------------------------------------------
     // Terminals
 
+    @SwitchProperty({
+        name: "Auto Align",
+        description: "Automatically clicks the amount of times needed in the alignment device in F7 P3.",
+        category: "Terminals",
+        subcategory: "Auto Devices"
+    })
+    autoAlign = false;
+
     // ---------------------------------------------------------------
     // GUI
 
