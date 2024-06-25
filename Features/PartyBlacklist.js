@@ -3,8 +3,14 @@ import Party from "../../BloomCore/Party"
 
 const doPlayerKick = (player) => {
     if (Config.playerBlacklistNames.includes(player)) {
-        ChatLib.command(`p kick ${player}`)
-        ChatLib.chat(`&3Kicked &a${player} &3as they are blacklisted!`)
+        setTimeout(() => {
+            ChatLib.command(`p kick ${player}`)
+            ChatLib.chat(`&3Kicked &a${player} &3as they are blacklisted!`)
+            Thread.sleep(250)
+            ChatLib.command(`pc kicked ${player} as they are blacklisted.`)
+            
+        }, 750)
+        
     }
 }
 
