@@ -15,7 +15,7 @@ import {
 
 @Vigilant("WeedClient", "§2Weed §aClient", {
     getCategoryComparator: () => (a, b) => {
-        const categories = ["General", "Dungeons", "Solvers", "Terminals", "Gui", "Party Finder"];
+        const categories = ["General", "Dungeons", "Solvers", "Floor 7", "Gui", "Party Finder"];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     }
 })
@@ -192,15 +192,23 @@ class Config {
     // Solvers
 
     // ---------------------------------------------------------------
-    // Terminals
+    // Floor 7
 
     @SwitchProperty({
         name: "Auto Align",
         description: "Automatically clicks the amount of times needed in the alignment device in F7 P3.",
-        category: "Terminals",
+        category: "Floor 7",
         subcategory: "Auto Devices"
     })
     autoAlign = false;
+
+    @SwitchProperty({
+        name: "Clip Ghost Blocks",
+        description: "Automatically places ghost blocks for you to clip to the next phase of floor 7.",
+        category: "Floor 7",
+        subcategory: "Misc"
+    })
+    clipGhostBlocks = false;
 
     // ---------------------------------------------------------------
     // GUI
