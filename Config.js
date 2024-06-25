@@ -35,13 +35,14 @@ class Config {
             "&a/tpclip <x y z> &f- &2Moves player in any direction based on set coordinates.",
             "&aGhost blocks &f- &2Deletes blocks infront of you &c(Set key in controls).",
             "&a/crash &f- &2givs infinit vbuks.",
+            "&a/skycrypt &f- &2Automatically opens up the skycrypt page of the specified user.",
             ""
         ]
         const maxLength = Math.max(...lines.map(a => Renderer.getStringWidth(a)))
 
         this.setCategoryDescription("General", 
             `
-            &a&l&nPlant
+            &a&l&nWeed!
 
             ${lines.map(a => a !== "" ? padText(a + "&0", ".", maxLength) : a).join("\n")}
 
