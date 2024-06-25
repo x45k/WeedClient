@@ -204,7 +204,7 @@ class Config {
 
     @SwitchProperty({
         name: "Clip Ghost Blocks",
-        description: "Automatically places ghost blocks for you to clip to the next phase of floor 7.",
+        description: "Automatically places ghost blocks for you to clip to the next phase of floor 7. (MAY SHOW UP WHILE CLEARING ROOMS, THIS WILL BE FIXED EVENTUALLY)",
         category: "Floor 7",
         subcategory: "Misc"
     })

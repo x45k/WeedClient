@@ -1,7 +1,8 @@
 import Config from "../Config"
+import { isInDungeon } from '../utils/utils'
 
 const setToEnderChest = (x, y, z) => {
-    if (!World.isLoaded() || !Config.clipGhostBlocks) return;
+    if (!World.isLoaded() || !Config.clipGhostBlocks || !isInDungeon) return;
     const pos = new BlockPos(x * 1, y * 1, z * 1);
     const enderChestBlockState = net.minecraft.init.Blocks.field_150474_ac.func_176223_P(); // Replace with the appropriate ender chest block state
     Client.getMinecraft().func_71410_x().field_71441_e.func_175656_a(pos.toMCBlock(), enderChestBlockState);

@@ -1,7 +1,8 @@
 import Config from "../Config"
+import { isInDungeon } from '../utils/utils'
 
 const setToAir = (x, y, z) => {
-    if (!World.isLoaded() || !Config.clipGhostBlocks) return;
+    if (!World.isLoaded() || !Config.clipGhostBlocks || !isInDungeon) return;
     const pos = new BlockPos(x * 1, y * 1, z * 1);
     Client.getMinecraft().func_71410_x().field_71441_e.func_175698_g(pos.toMCBlock());
 }
