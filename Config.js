@@ -310,7 +310,7 @@ class Config {
         description: "Message that is sent when you enter F7P4",
         category: "Floor 7",
         subcategory: "Auto Messages",
-        placeholder: "ill do devs"
+        placeholder: "ill ice spray"
     })
     f7p4custommessage = "";
 
