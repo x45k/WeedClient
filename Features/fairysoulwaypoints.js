@@ -1,50 +1,38 @@
-const skullUUID = "57a4c8dc-9b8e-3d41-80da-a608901a6147";
+function createWaypoint(world, text, redval, greenval, blueval) {
+    const skullID = '57a4c8dc-9b8e-3d41-80da-a608901a6147';
+    let skullLocations = [];
 
-let skullPosition = null;
+    function isSkullWithID(entity) {
+        return entity.getType() === EntityType.SKULL && entity.getUUID().toString() === skullID;
+    }
 
-function createWaypoint(world, text, redval, greenval, blueval, posx, posy, posz) {
-    register("renderWorld", () => {
-        createWaypoint(world, text, redval, greenval, blueval, posx, posy, posz);
-    });
-}
+    register('entity_spawned', function (event) {
+        let entity = event.getEntity();
 
-function removeWaypoint() {
-    skullPosition = null;
-}
-
-register("tick", () => {
-    const world = World.getWorld();
-
-    world.getEntities().forEach(entity => {
-        if (entity.getUUID().toString() === skullUUID) {
-            const posX = entity.getX();
-            const posY = entity.getY();
-            const posZ = entity.getZ();
-
-            skullPosition = { world: world.getName(), posX, posY, posZ };
-
-            createWaypoint(world.getName(), "Skull Waypoint", 1, 0, 0, posX, posY, posZ);
+        if (isSkullWithID(entity)) {
+            skullLocations.push(entity.getLocation());
+            updateWaypoint();
         }
     });
-});
 
-register("rightClick", event => {
-    const clickedEntity = event.getEntity();
+    register('entity_despawned', function (event) {
+        let entity = event.getEntity();
 
-    if (clickedEntity && clickedEntity.getUUID().toString() === skullUUID) {
-        removeWaypoint();
+        if (isSkullWithID(entity)) {
+            skullLocations = skullLocations.filter(loc => !loc.equals(entity.getLocation()));
+        }
+    });
+
+    function updateWaypoint() {
+        let xCoords = skullLocations.map(loc => loc.getX().toFixed(1)).join(', ');
+        let yCoords = skullLocations.map(loc => loc.getY().toFixed(1)).join(', ');
+        let zCoords = skullLocations.map(loc => loc.getZ().toFixed(1)).join(', ');
+
+        let waypointText = `${text}\nSkull Positions:\nX: ${xCoords}\nY: ${yCoords}\nZ: ${zCoords}`;
+
+        removeOldWaypoint();
+
+        if (skullLocations.length > 0) {
+            let waypoint = new CustomWaypoint(waypointText, new Color(redval, greenval, blueval), skullLocations[0]);
     }
-});
-
-register("renderWorld", () => {
-    if (skullPosition) {
-        createWaypoint(
-            skullPosition.world,
-            "Skull Waypoint",
-            1, 0, 0,
-            skullPosition.posX,
-            skullPosition.posY,
-            skullPosition.posZ
-        );
-    }
-});
+}
