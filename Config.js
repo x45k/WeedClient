@@ -168,6 +168,14 @@ class Config {
     })
     autoPurchaseArrows = false;
 
+    @SwitchProperty({
+        name: "Hide Lightning",
+        description: "Hides lightning.",
+        category: "General",
+        subcategory: "Misc"
+    })
+    hideLightning = false;
+
     // ---------------------------------------------------------------
     // Dungeons
 
