@@ -261,7 +261,7 @@ class Config {
         subcategory: "Auto Messages",
         placeholder: "ill rc"
     })
-    f7p1custommessage = "";
+    f7p1custommessage = "ill rc";
 
     @SwitchProperty({
         name: "F7 P2",
@@ -278,7 +278,7 @@ class Config {
         subcategory: "Auto Messages",
         placeholder: "ill yellow pad, someone take green"
     })
-    f7p2custommessage = "";
+    f7p2custommessage = "ill yellow pad, someone take green";
 
     @SwitchProperty({
         name: "F7 P3",
@@ -295,7 +295,7 @@ class Config {
         subcategory: "Auto Messages",
         placeholder: "ill do devs"
     })
-    f7p3custommessage = "";
+    f7p3custommessage = "ill do devs";
 
     @SwitchProperty({
         name: "F7 P4",
@@ -312,7 +312,7 @@ class Config {
         subcategory: "Auto Messages",
         placeholder: "ill do devs"
     })
-    f7p4custommessage = "";
+    f7p4custommessage = "ill do devs";
 
     // ---------------------------------------------------------------
     // Kuudra
