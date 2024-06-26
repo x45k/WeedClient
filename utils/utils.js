@@ -24,6 +24,4 @@ export function createWaypoint(world, text, redval, greenval, blueval, posx, pos
         renderBeaconBeam(posx, posy, posz, redval, greenval, blueval, 0.5, true, 300)
         Tessellator.drawString(text, posx, posy+1, posz, -1157562624, true, 1, true)
     }
-    
-    
 }
