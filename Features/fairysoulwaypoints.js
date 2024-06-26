@@ -34,5 +34,6 @@ function createWaypoint(world, text, redval, greenval, blueval) {
 
         if (skullLocations.length > 0) {
             let waypoint = new CustomWaypoint(waypointText, new Color(redval, greenval, blueval), skullLocations[0]);
+        }
     }
 }
