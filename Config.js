@@ -38,6 +38,10 @@ class Config {
         this.addDependency("F7P3 Message", "F7 P3")
         this.addDependency("F7 P4", "F7 Phase Messages")
         this.addDependency("F7P4 Message", "F7 P4")
+        this.addDependency("On Blood Full", "Blood Messages")
+        this.addDependency("On Blood Cleared", "Blood Messages")
+        this.addDependency("Blood Full Message", "On Blood Full")
+        this.addDependency("Blood Cleared Message", "On Blood Cleared")
 
         const lines = [
             "",
@@ -215,6 +219,48 @@ class Config {
         subcategory: "Warping"
     })
     warpOnPlayerKick = false;
+
+    @SwitchProperty({
+        name: "Blood Messages",
+        description: "Sends a message when either blood is full, blood has been cleared, or both.",
+        category: "Dungeons",
+        subcategory: "Blood Room"
+    })
+    enableBloodMessages = false;
+
+    @SwitchProperty({
+        name: "On Blood Full",
+        description: "Sends a message when blood has filled.",
+        category: "Dungeons",
+        subcategory: "Blood Room"
+    })
+    onBloodFull = false;
+
+    @TextProperty({
+        name: "Blood Full Message",
+        description: "Message that is sent when blood becomes full.",
+        category: "Dungeons",
+        subcategory: "Blood Room",
+        placeholder: "blood has been cleared hurry up and go in"
+    })
+    bloodFullMessage = "blood has been cleared hurry up and go in";
+
+    @SwitchProperty({
+        name: "On Blood Cleared",
+        description: "Sends a message when blood has been cleared.",
+        category: "Dungeons",
+        subcategory: "Blood Room"
+    })
+    onBloodClear = false;
+
+    @TextProperty({
+        name: "Blood Cleared Message",
+        description: "Message that is sent when blood is cleared.",
+        category: "Dungeons",
+        subcategory: "Blood Room",
+        placeholder: "blood is full go clear it fuckers"
+    })
+    bloodClearedMessage = "blood is full go clear it fuckers";
 
     // ---------------------------------------------------------------
     // Solvers
