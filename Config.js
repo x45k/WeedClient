@@ -34,6 +34,10 @@ class Config {
         this.addDependency("F7P1 Message","F7 P1")
         this.addDependency("F7 P2", "F7 Phase Messages")
         this.addDependency("F7P2 Message", "F7 P2")
+        this.addDependency("F7 P3", "F7 Phase Messages")
+        this.addDependency("F7P3 Message", "F7 P3")
+        this.addDependency("F7 P4", "F7 Phase Messages")
+        this.addDependency("F7P4 Message", "F7 P4")
 
         const lines = [
             "",
@@ -275,6 +279,40 @@ class Config {
         placeholder: "ill yellow pad, someone take green"
     })
     f7p2custommessage = "";
+
+    @SwitchProperty({
+        name: "F7 P3",
+        description: "Automatically sends a message when you enter F7P3.",
+        category: "Floor 7",
+        subcategory: "Auto Messages"
+    })
+    f7p3automessage = false;
+
+    @TextProperty({
+        name: "F7P3 Message",
+        description: "Message that is sent when you enter F7P3",
+        category: "Floor 7",
+        subcategory: "Auto Messages",
+        placeholder: "ill do devs"
+    })
+    f7p3custommessage = "";
+
+    @SwitchProperty({
+        name: "F7 P4",
+        description: "Automatically sends a message when you enter F7P4.",
+        category: "Floor 7",
+        subcategory: "Auto Messages"
+    })
+    f7p4automessage = false;
+
+    @TextProperty({
+        name: "F7P4 Message",
+        description: "Message that is sent when you enter F7P4",
+        category: "Floor 7",
+        subcategory: "Auto Messages",
+        placeholder: "ill do devs"
+    })
+    f7p4custommessage = "";
 
     // ---------------------------------------------------------------
     // Kuudra
