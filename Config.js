@@ -42,6 +42,7 @@ class Config {
         this.addDependency("On Blood Cleared", "Blood Messages")
         this.addDependency("Blood Full Message", "On Blood Full")
         this.addDependency("Blood Cleared Message", "On Blood Cleared")
+        this.addDependency("Class", "Class Buyer")
 
         const lines = [
             "",
@@ -418,6 +419,28 @@ class Config {
         subcategory: "Notifiers"
     })
     vanqNotifier = false;
+
+    @SwitchProperty({
+        name: "Class Buyer",
+        description: "Automatically purchases your class when you first open shop.",
+        category: "Kuudra",
+        subcategory: "Class"
+    })
+    enableClassBuyer = false;
+
+    @SelectorProperty({
+        name: "Class",
+        description: "Select class to purchase.",
+        category: "Kuudra",
+        subcategory: "Class",
+        options: [
+            "Specialist",
+            "Support",
+            "Crowd Control",
+            "Cannoneer"
+        ]
+    })
+    classType = 0;
 
     // ---------------------------------------------------------------
     // GUI
