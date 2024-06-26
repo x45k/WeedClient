@@ -28,6 +28,7 @@ import "./Features/hidelightning"
 import "./Features/kuudraClass"
 import "./Features/lividsolver"
 
+
 import { createWaypoint } from "./utils/utils"
 
 register("renderWorld", () => {
