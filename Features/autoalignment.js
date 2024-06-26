@@ -77,13 +77,26 @@ const getCurrentFrameRotations = () => {
 const getClicksForRotation = (start, end) => (8 - start + end) % 8
 
 const clickFrame = (index, clicks) => {
-    const [x, y, z] = getCoordFromIndex(index)
-    const frame = World.getClosestEntity(EntityItemFrame, [x, y, z], 0.5)
-    if (frame) {
+    const [x, y, z] = getCoordFromIndex(index);
+    const itemFrames = World.getAllEntitiesOfType(EntityItemFrame);
+    let closestFrame = null;
+    let closestDistance = Infinity;
+
+    for (let frame of itemFrames) {
+        let [fx, fy, fz] = getEntityXYZ(frame);
+        let distance = Math.sqrt((x - fx) ** 2 + (y - fy) ** 2 + (z - fz) ** 2);
+
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestFrame = frame;
+        }
+    }
+
+    if (closestFrame && closestDistance <= 0.5) {
         for (let i = 0; i < clicks; i++) {
             Client.scheduleTask(() => {
-                Client.getMinecraft().field_71442_b.func_187098_a(Player.getPlayer(), frame.getEntity())
-            }, i * 50)
+                Client.getMinecraft().field_71442_b.func_187098_a(Player.getPlayer(), closestFrame.getEntity());
+            }, i * 50);
         }
     }
 }
