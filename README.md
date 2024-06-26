@@ -1,6 +1,7 @@
 weed client
 
-features: 
+features:
+ghost blocks
 vclip
 hclip
 tpclip
