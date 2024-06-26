@@ -30,6 +30,8 @@ class Config {
         this.addDependency("Supply Crates Notifier","Kuudra Notifier")
         this.addDependency("Fuel Cells Notifier","Kuudra Notifier")
         this.addDependency("Kuudra Stunned Notifier","Kuudra Notifier")
+        this.addDependency("F7 P1","F7 Phase Messages")
+        this.addDependency("F7P1 Message","F7 P1")
 
         const lines = [
             "",
@@ -148,6 +150,14 @@ class Config {
     })
     enableCopyChat = false;
 
+    @SwitchProperty({
+        name: "Auto Purchase Arrows",
+        description: "Automatically purchases arrows from Ophelia or the Weaponsmith",
+        category: "General",
+        subcategory: "Misc"
+    })
+    autoPurchaseArrows = false;
+
     // ---------------------------------------------------------------
     // Dungeons
 
@@ -221,6 +231,48 @@ class Config {
         subcategory: "Misc"
     })
     clipGhostBlocks = false;
+
+    @SwitchProperty({
+        name: "F7 Phase Messages",
+        description: "Automatically sends a message when you enter F7 phases of your choice.",
+        category: "Floor 7",
+        subcategory: "Auto Messages"
+    })
+    f7p2automessag = false;
+
+    @SwitchProperty({
+        name: "F7 P1",
+        description: "Automatically sends a message when you enter F7P1.",
+        category: "Floor 7",
+        subcategory: "Auto Messages"
+    })
+    f7p1automessage = false;
+
+    @TextProperty({
+        name: "F7P1 Message",
+        description: "Message that is sent when you enter F7P1",
+        category: "Floor 7",
+        subcategory: "Auto Messages",
+        placeholder: "ill rc"
+    })
+    f7p2custommessage = "";
+
+    @SwitchProperty({
+        name: "Floor 7 Phase 2",
+        description: "Automatically sends a message when you enter F7P2.",
+        category: "Floor 7",
+        subcategory: "Auto Messages"
+    })
+    f7p2automessage = false;
+
+    @TextProperty({
+        name: "Custom Floor 7 Phase 2 Message",
+        description: "Message that is sent when you enter F7P2",
+        category: "Floor 7",
+        subcategory: "Auto Messages",
+        placeholder: "ill yellow pad, someone take green"
+    })
+    f7p2custommessage = "";
 
     // ---------------------------------------------------------------
     // Kuudra
