@@ -5,6 +5,7 @@ import "./Commands/ConfigGUI"
 import "./Commands/crash"
 import "./Commands/setwindowname"
 import "./Commands/skycrypt"
+import "./Commands/printWorld"
 
 import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
@@ -26,3 +27,9 @@ import "./Features/watcher"
 import "./Features/hidelightning"
 import "./Features/kuudraClass"
 import "./Features/lividsolver"
+
+import { createWaypoint } from "./utils/utils"
+
+register("renderWorld", () => {
+    createWaypoint("Dungeon Hub", "Test", 0.5, 0.12, 0.8, 0, 124, 0)
+})
