@@ -188,9 +188,17 @@ class Config {
         name: "Warp Assurance",
         description: "Warps party when dungeon countdown starts.",
         category: "Dungeons",
-        subcategory: "Warp Assurance"
+        subcategory: "Warping"
     })
     enableWarpAssurance = false;
+
+    @SwitchProperty({
+        name: "Warp On Player Kick",
+        description: "Warps a player back to a dungeon when they are disconnected. (Will not work if the player got limboed!)",
+        category: "Dungeons",
+        subcategory: "Warping"
+    })
+    warpOnPlayerKick = false;
 
     // ---------------------------------------------------------------
     // Solvers
