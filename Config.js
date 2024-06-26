@@ -177,6 +177,14 @@ class Config {
     })
     hideLightning = false;
 
+    @SwitchProperty({
+        name: "Fairy Souls",
+        description: "Show waypoints to fairy souls [AUTO UPDATES]\n&4&lMay not show waypoints if souls are not rendered.",
+        category: "General",
+        subcategory: "Fairy Souls"
+    })
+    showSouls = false;
+
     // ---------------------------------------------------------------
     // Dungeons
 

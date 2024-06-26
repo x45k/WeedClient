@@ -1,39 +1,19 @@
-function createWaypoint(world, text, redval, greenval, blueval) {
-    const skullID = '57a4c8dc-9b8e-3d41-80da-a608901a6147';
-    let skullLocations = [];
+import Config from "../Config"
+import { createWaypoint } from "../utils/utils"
+import { getEntitySkullTexture, EntityArmorStand} from "../../BloomCore/utils/Utils"
 
-    function isSkullWithID(entity) {
-        return entity.getType() === EntityType.SKULL && entity.getUUID().toString() === skullID;
-    }
+const soulString = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjk2OTIzYWQyNDczMTAwMDdmNmFlNWQzMjZkODQ3YWQ1Mzg2NGNmMTZjMzU2NWExODFkYzhlNmIyMGJlMjM4NyJ9fX0="
 
-    register('entity_spawned', function (event) {
-        let entity = event.getEntity();
+register("renderWorld", () => {
+    World.getAllEntitiesOfType(EntityArmorStand).forEach(Entity => {
+        let posx = Entity.getX()
+        let posy = Entity.getY()
+        let posz = Entity.getZ()
+        if (getEntitySkullTexture(Entity) === null) return
+        if (getEntitySkullTexture(Entity) !== soulString) return
+        if (!Config.showSouls) return
+        createWaypoint("any", "Fairy Soul", 128, 0, 128, posx, posy, posz)
+    })
 
-        if (isSkullWithID(entity)) {
-            skullLocations.push(entity.getLocation());
-            updateWaypoint();
-        }
-    });
 
-    register('entity_despawned', function (event) {
-        let entity = event.getEntity();
-
-        if (isSkullWithID(entity)) {
-            skullLocations = skullLocations.filter(loc => !loc.equals(entity.getLocation()));
-        }
-    });
-
-    function updateWaypoint() {
-        let xCoords = skullLocations.map(loc => loc.getX().toFixed(1)).join(', ');
-        let yCoords = skullLocations.map(loc => loc.getY().toFixed(1)).join(', ');
-        let zCoords = skullLocations.map(loc => loc.getZ().toFixed(1)).join(', ');
-
-        let waypointText = `${text}\nSkull Positions:\nX: ${xCoords}\nY: ${yCoords}\nZ: ${zCoords}`;
-
-        removeOldWaypoint();
-
-        if (skullLocations.length > 0) {
-            let waypoint = new CustomWaypoint(waypointText, new Color(redval, greenval, blueval), skullLocations[0]);
-        }
-    }
-}
+})
