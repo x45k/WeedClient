@@ -7,4 +7,3 @@ register("chatComponentClicked", (message) => {
     ChatLib.command(`ct copy ${copyString}`, true)
     ChatLib.chat("&3Copied message!")
 })
-
