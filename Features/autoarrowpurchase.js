@@ -12,7 +12,7 @@ register("tick", () => {
                     item = inv.getStackInSlot(53).getLore()
                     if (!item.includes("§5§o§aYour quiver is full!")) {
                         if (new Date().getTime() - lastclick > 1000) {
-                            new Message("Arrows purchased.").setChatLineId(24305).chat();
+                            new Message("§3Arrows purchased.").setChatLineId(24305).chat();
                             clicked = true
                             inv.click(53,false,"MIDDLE")
                             lastclick = new Date().getTime()

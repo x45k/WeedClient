@@ -32,6 +32,8 @@ class Config {
         this.addDependency("Kuudra Stunned Notifier","Kuudra Notifier")
         this.addDependency("F7 P1","F7 Phase Messages")
         this.addDependency("F7P1 Message","F7 P1")
+        this.addDependency("F7 P2", "F7 Phase Messages")
+        this.addDependency("F7P2 Message", "F7 P2")
 
         const lines = [
             "",
@@ -255,10 +257,10 @@ class Config {
         subcategory: "Auto Messages",
         placeholder: "ill rc"
     })
-    f7p2custommessage = "";
+    f7p1custommessage = "";
 
     @SwitchProperty({
-        name: "Floor 7 Phase 2",
+        name: "F7 P2",
         description: "Automatically sends a message when you enter F7P2.",
         category: "Floor 7",
         subcategory: "Auto Messages"
@@ -266,7 +268,7 @@ class Config {
     f7p2automessage = false;
 
     @TextProperty({
-        name: "Custom Floor 7 Phase 2 Message",
+        name: "F7P2 Message",
         description: "Message that is sent when you enter F7P2",
         category: "Floor 7",
         subcategory: "Auto Messages",
