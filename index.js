@@ -29,6 +29,7 @@ import "./Features/kuudraClass"
 import "./Features/lividsolver"
 import "./Features/blessingmessagehider"
 import "./Features/fairysoulwaypoints"
+import "./Features/hidetermgui"
 
 
 import { createWaypoint } from "./utils/utils"

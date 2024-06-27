@@ -302,6 +302,14 @@ class Config {
     // Floor 7
 
     @SwitchProperty({
+        name: "Term Inv Walk",
+        description: "Hides the gui of terminals. (CURRENTLY BUGGED AND DOES NOT LET YOU MOVE!)",
+        category: "Floor 7",
+        subcategory: "Terminals"
+    })
+    termInvWalk = false;
+
+    @SwitchProperty({
         name: "Auto Align",
         description: "Automatically clicks the amount of times needed in the alignment device in F7 P3.",
         category: "Floor 7",
