@@ -6,6 +6,7 @@ import "./Commands/crash"
 import "./Commands/setwindowname"
 import "./Commands/skycrypt"
 import "./Commands/printWorld"
+import "./Commands/getSkulls"
 
 import "./Features/PartyBlacklist"
 import "./Features/AutoGFS"
