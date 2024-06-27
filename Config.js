@@ -294,6 +294,14 @@ class Config {
         subcategory: "General"
     })
     hideBlessings = false;
+    
+    @SwitchProperty({
+        name: "Fel Waypoints",
+        description: "Gives waypoints for fels in dungeons.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    felWaypoints = false;
 
     // ---------------------------------------------------------------
     // Solvers

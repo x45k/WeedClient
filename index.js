@@ -30,6 +30,7 @@ import "./Features/lividsolver"
 import "./Features/blessingmessagehider"
 import "./Features/fairysoulwaypoints"
 import "./Features/hidetermgui"
+import "./Features/showfels"
 
 
 import { createWaypoint } from "./utils/utils"
