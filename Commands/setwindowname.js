@@ -1,7 +1,7 @@
 importPackage(Packages.org.lwjgl.opengl);
 importPackage(Packages.java.lang.reflect);
+import data from "../utils/data"
 
-// Function to display a message in the chat
 function chat(message) {
     ChatLib.chat(message);
   }
@@ -12,7 +12,9 @@ function chat(message) {
       return;
     }
     
-    // Construct a formatted message to display in the chat
+  data.windowNamee = `${windowName}`
+  data.save()
+
     const formattedMessage = `Window Title: ${windowName}`;
     org.lwjgl.opengl.Display.setTitle(`${windowName}`)
     chat(formattedMessage);
