@@ -7,17 +7,15 @@ function chat(message) {
   }
   
   register("command", (windowName) => {
+    data.windowNamee = windowName
     if (!windowName) {
       chat("Usage: /setwindowname <name>");
       return;
     }
-    
-  data.windowNamee = `${windowName}`
-  data.save()
 
     const formattedMessage = `Window Title: ${windowName}`;
     org.lwjgl.opengl.Display.setTitle(`${windowName}`)
+    data.save()
     chat(formattedMessage);
   })
     .setName("setwindowname");
-  
