@@ -1,6 +1,6 @@
 importPackage(Packages.org.lwjgl.opengl);
 importPackage(Packages.java.lang.reflect);
-import data from "../utils/data"
+import { data } from "../utils/data"
 
 function chat(message) {
     ChatLib.chat(message);
