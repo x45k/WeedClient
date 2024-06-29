@@ -1,5 +1,5 @@
 import PogObject from "../../PogData";
 
 export const data = new PogObject("Weed", {
-  brushCoords = []
+  brushCoords: []
 }, "data/data.json")
