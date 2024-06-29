@@ -189,6 +189,14 @@ class Config {
     // Dungeons
 
     @SwitchProperty({
+        name: "Bar Phase",
+        description: "Automatically clips you through iron bars.",
+        category: "Dungeons",
+        subcategory: "Bar Phase"
+    })
+    barPhase = false;
+
+    @SwitchProperty({
         name: "Dungeons Death Messages",
         description: "Send a message in partychat when someone dies in a dungeon",
         category: "Dungeons",

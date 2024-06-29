@@ -32,6 +32,7 @@ import "./Features/blessingmessagehider"
 import "./Features/fairysoulwaypoints"
 import "./Features/hidetermgui"
 import "./Features/showfels"
+import "./Features/barphase"
 
 
 import { createWaypoint } from "./utils/utils"
