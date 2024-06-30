@@ -1,9 +1,9 @@
 import Config from "../Config";
 
-let inv = Player.getContainer();
-let n = inv.getName();
-
 register(net.minecraftforge.client.event.GuiScreenEvent.DrawScreenEvent.Pre, (event) => {
+
+    let inv = Player.getContainer();
+    let n = inv.getName();
 
     if (n == 'Click the button on time!' || 
         n == 'Click in order!' || 

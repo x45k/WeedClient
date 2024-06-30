@@ -197,6 +197,14 @@ class Config {
     barPhase = false;
 
     @SwitchProperty({
+        name: "Blood Dialogue Skip",
+        description: "Notifies you when to clear blood to skip the dialogue from the watcher.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    bloodDialogueSkip = false;
+
+    @SwitchProperty({
         name: "Dungeons Death Messages",
         description: "Send a message in partychat when someone dies in a dungeon",
         category: "Dungeons",

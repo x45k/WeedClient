@@ -33,7 +33,7 @@ import "./Features/fairysoulwaypoints"
 import "./Features/hidetermgui"
 import "./Features/showfels"
 import "./Features/barphase"
-
+import "./Features/blooddialogueskip"
 
 import { createWaypoint } from "./utils/utils"
 
