@@ -9,7 +9,14 @@ register("tick", () => {
 
 register("tick", () => {
     if (Config.enableAutoGfsJerrys !== true) return
-    if (Player.getInventory().getItems().some(a => a?.getName()?.removeFormatting() === "§fInflatable Jerry") == false) {
+    if (Player.getInventory().getItems().some(a => a?.getName()?.removeFormatting() === "Inflatable Jerry") == false) {
         ChatLib.command("gfs Inflatable Jerry 64")
+    }
+})
+
+register("tick", () => {
+    if (Config.enableAutoGfsDecoys !== true) return
+    if (Player.getInventory().getItems().some(a => a?.getName()?.removeFormatting() === "§aDecoy") == false) {
+        ChatLib.command("gfs Decoy 64")
     }
 })
