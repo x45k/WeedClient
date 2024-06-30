@@ -34,9 +34,4 @@ import "./Features/hidetermgui"
 import "./Features/showfels"
 import "./Features/barphase"
 import "./Features/blooddialogueskip"
-
-import { createWaypoint } from "./utils/utils"
-
-register("renderWorld", () => {
-    createWaypoint("Dungeon Hub", "Test", 0.5, 0.12, 0.8, 0, 124, 0)
-})
+import "./Features/copyrngdrops"

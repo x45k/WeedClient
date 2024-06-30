@@ -46,6 +46,8 @@ class Config {
         this.addDependency("Auto GFS Pearls", "Auto GFS")
         this.addDependency("Auto GFS Jerrys", "Auto GFS")
         this.addDependency("Auto GFS Decoys", "Auto GFS")
+        this.addDependency("Copy Rare Drops", "Copy Drops")
+        this.addDependency("Copy Super Rare Drops", "Copy Drops")
 
         const lines = [
             "",
@@ -187,6 +189,30 @@ class Config {
         subcategory: "Copy Chat"
     })
     enableCopyChat = false;
+
+    @SwitchProperty({
+        name: "Copy Drops",
+        description: "Copies rarer drops to clipboard.",
+        category: "General",
+        subcategory: "Copy Chat"
+    })
+    copyDrops = false;
+
+    @SwitchProperty({
+        name: "Copy Rare Drops",
+        description: "Copies rare drops to clipboard.",
+        category: "General",
+        subcategory: "Copy Chat"
+    })
+    copyRareDrops = false;
+
+    @SwitchProperty({
+        name: "Copy Super Rare Drops",
+        description: "Copies super rare drops to clipboard.",
+        category: "General",
+        subcategory: "Copy Chat"
+    })
+    copySuperRareDrops = false;
 
     @SwitchProperty({
         name: "Auto Purchase Arrows",
