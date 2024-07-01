@@ -5,17 +5,16 @@ import Dungeon from "../../BloomCore/dungeons/Dungeon"
 const setToEnderChest = (x, y, z) => {
     if (!World.isLoaded() || !Config.clipGhostBlocks) return;
     const pos = new BlockPos(x, y, z);
-    const enderChestBlockState = net.minecraft.init.Blocks.field_150477_bB.func_176223_P();
-    Client.getMinecraft().func_71410_x().field_71441_e.func_175656_a(pos.toMCBlock(), enderChestBlockState);
+    const railBlockState = net.minecraft.block.Block.func_176220_d(175); // Rail block state (assuming 66 is the correct ID for rails)
+    Client.getMinecraft().func_71410_x().field_71441_e.func_175656_a(pos.toMCBlock(), railBlockState);    
 };
 
 const coordsList = [
-      "69, 221, 35",
-      "69, 221, 34",
-      "69, 221, 33",
-      "69, 221, 32",
-      "57, 115, 111",
-      "56, 115, 111"
+      "58, 133, 142",
+      "58, 136, 142",
+      "62, 136, 142",
+      "62, 133, 142",
+      "60, 135, 142"
 ];
 
 register('tick', () => {
