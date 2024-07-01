@@ -15,7 +15,7 @@ import {
 
 @Vigilant("WeedClient", "§2Weed §aClient", {
     getCategoryComparator: () => (a, b) => {
-        const categories = ["General", "Dungeons", "Solvers", "Floor 7", "Kuudra", "Gui", "Party Finder"];
+        const categories = ["General", "Dungeons", "Solvers", "Floor 7", "Kuudra", "Mining", "Gui", "Party Finder"];
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     }
 })
@@ -550,6 +550,17 @@ class Config {
         ]
     })
     classType = 0;
+
+    // ---------------------------------------------------------------
+    // Mining
+
+    @SwitchProperty({
+        name: "5x Titanium",
+        description: "Notifies you when the 5x titanium event is active.",
+        category: "Mining",
+        subcategory: "Events"
+    })
+    fiveTimesTitanium = false;
 
     // ---------------------------------------------------------------
     // GUI
