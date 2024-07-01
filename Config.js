@@ -379,12 +379,12 @@ class Config {
     // Floor 7
 
     @SwitchProperty({
-        name: "Term Inv Walk",
-        description: "Hides the gui of terminals. (CURRENTLY BUGGED AND DOES NOT LET YOU MOVE!)",
+        name: "Terminal Highlighter",
+        description: "Highlights terminals in F7P3.",
         category: "Floor 7",
         subcategory: "Terminals"
     })
-    termInvWalk = false;
+    termHighlight = false;
 
     @SwitchProperty({
         name: "Auto Align",
