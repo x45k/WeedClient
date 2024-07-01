@@ -573,6 +573,14 @@ class Config {
         placeholder: ""
     })
     playerBlacklistNames = "";
+
+    @SwitchProperty({
+        name: "Party Finder Full",
+        description: "Notifies you when your party is full.",
+        category: "Party Finder",
+        subcategory: "General"
+    })
+    partyFullAlert = false;
     
 }
 export default new Config()
