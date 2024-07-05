@@ -13,10 +13,10 @@ const coordsList = [
     "60, 134, 142"
 ];
 
-register('tick', () => {
+register('step', () => {
     if (!World.isLoaded() || !Config.clipGhostBlocks || !isInDungeon || Dungeon.floorNumber !== 7) return;
     coordsList.forEach(coordStr => {
         const [x, y, z] = coordStr.split(', ').map(Number);
         setToEnderChest(x, y, z);
     });
-});
+}).setFps(2);
