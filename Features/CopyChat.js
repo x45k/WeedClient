@@ -1,9 +1,10 @@
 import Config from "../Config";
 
-register("chatComponentClicked", (message) => {
-    if (!Config.enableCopyChat) return
-    if (!Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)) return
-    const copyString = message.getText().removeFormatting()
-    ChatLib.command(`ct copy ${copyString}`, true)
-    ChatLib.chat("&3Copied message!")
+register("chat", (event) => {
+    if (!Config.enableCopyChat || ChatLib.getChatMessage(event) == " ") return
+
+    let chat = new Message()
+    chat.addTextComponent(new TextComponent(EventLib.getMessage(event)).setHover("show_text", "&2&lCOPY").setClick("run_command", `/ct copy ${ChatLib.getChatMessage(event).removeFormatting()}`))
+    cancel(event)
+    ChatLib.chat(chat)
 })
