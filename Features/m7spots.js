@@ -1,22 +1,6 @@
-import Dungeon from "../../../BloomCore/dungeons/Dungeon"
-import { data } from "../../gui";
-import { renderBoxWithText } from "../../utils/utils"
-
-const locations = [
-  [37, 15, 44, 'decoy'],
-  [90, 12, 100, 'decoy'],
-  [28, 6, 50, 'gyro'],
-  [21, 12, 88, 'decoy'],
-  [34, 6, 46, 'gyro'],
-  [21, 12, 53, 'decoy'],
-  [25, 6, 83, 'gyro'],
-  [85, 6, 101, 'gyro'],
-  [27, 16,94, 'green'],
-  [23, 21, 54, 'red'],
-  [84, 20, 59, 'orange'],
-  [85, 20, 98, 'blue'],
-  [56, 20, 124, 'purple']
-];
+import Dungeon from "../../BloomCore/dungeons/Dungeon"
+import Config from "../Config"
+import { createWaypoint } from "../utils/utils"
 
 register("renderWorld", () => {
         if (!Config.m7Spots && Dungeon.floorNumber !== 7) return
