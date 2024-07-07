@@ -246,6 +246,14 @@ class Config {
     })
     showSouls = false;
 
+    @SwitchProperty({
+        name: "Auto Sell",
+        description: "Automatically sells items on the item list. (CREDITS TO ODTHEKING)\nCommand is /autosell.",
+        category: "General",
+        subcategory: "Misc"
+    })
+    autoSell = false;
+
     // ---------------------------------------------------------------
     // Dungeons
 
@@ -379,6 +387,14 @@ class Config {
         subcategory: "General"
     })
     hideBlessings = false;
+
+    @SwitchProperty({
+        name: "Blessings Notifier",
+        description: "Notifies you when a player obtains a blessing.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    blessingNotifier = false;
     
     @SwitchProperty({
         name: "Fel Waypoints",
@@ -403,14 +419,6 @@ class Config {
         subcategory: "General"
     })
     hideSoulweaverSkulls = false;
-
-    @SwitchProperty({
-        name: "M7 Spots",
-        description: "Creates waypoints for where you need to go in M7.",
-        category: "Dungeons",
-        subcategory: "General"
-    })
-    m7Spots = false;
 
     // ---------------------------------------------------------------
     // Solvers
@@ -541,6 +549,14 @@ class Config {
         subcategory: "M7"
     })
     relicAura = false;
+
+    @SwitchProperty({
+        name: "M7 Spots",
+        description: "Creates waypoints for where you need to go in M7.",
+        category: "Floor 7",
+        subcategory: "M7"
+    })
+    m7Spots = false;
 
     // ---------------------------------------------------------------
     // Kuudra
