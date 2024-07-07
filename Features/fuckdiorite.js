@@ -3,7 +3,7 @@ import { isInDungeon } from '../utils/utils'
 import Dungeon from "../../BloomCore/dungeons/Dungeon"
 
 const setToEnderChest = (x, y, z) => {
-    if (!World.isLoaded() || !Config.clipGhostBlocks || !isInDungeon || Dungeon.floorNumber !== 7) return;
+    if (!World.isLoaded() || !Config.fuckDiorite || !isInDungeon || Dungeon.floorNumber !== 7) return;
     const pos = new BlockPos(x, y, z);
     const railBlockState = net.minecraft.block.Block.func_176220_d(20);
     Client.getMinecraft().func_71410_x().field_71441_e.func_175656_a(pos.toMCBlock(), railBlockState);    

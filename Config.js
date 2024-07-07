@@ -494,6 +494,14 @@ class Config {
     })
     f7p4custommessage = "ill do devs";
 
+    @SwitchProperty({
+        name: "Fuck Diorite",
+        description: "Turns diorite into glass.",
+        category: "Floor 7",
+        subcategory: "Misc"
+    })
+    fuckDiorite = false;
+
     // ---------------------------------------------------------------
     // Kuudra
 
