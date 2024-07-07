@@ -1,4 +1,4 @@
-import { C02PacketUseEntity, EntityArmorStand } from "../../../BloomCore/utils/Utils"
+import { C02PacketUseEntity, EntityArmorStand } from "../../BloomCore/utils/Utils"
 import Config from "../Config"
 import { Vec3 } from "../utils/utils"
 

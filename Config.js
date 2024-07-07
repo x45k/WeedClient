@@ -405,6 +405,14 @@ class Config {
     felWaypoints = false;
 
     @SwitchProperty({
+        name: "Secret Aura",
+        description: "Automatically clicks secrets when they are in range. (MAY BAN, UNSURE)",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    secretAura = false;
+
+    @SwitchProperty({
         name: "Auto Architects Draft",
         description: "Automatically grabs a draft from your sacks when a puzzle is failed.",
         category: "Dungeons",
