@@ -2,7 +2,7 @@ import { C02PacketUseEntity, TileEntityChest } from "../../BloomCore/utils/Utils
 import Config from "../Config";
 import { Vec3, isInDungeon } from "../utils/utils";
 
-register('tick', () => {
+register('step', () => {
     if (!isInDungeon || !Config.secratAura) return;
 
     // Find and interact with levers and chests
@@ -13,7 +13,7 @@ register('tick', () => {
             interactWithEntity(e);
         }
     }
-});
+}).setDelay(1);
 
 const interactWithEntity = (entity) => {
     const objectMouseOver = Client.getMinecraft().field_71476_x.field_72307_f;
