@@ -388,6 +388,30 @@ class Config {
     })
     felWaypoints = false;
 
+    @SwitchProperty({
+        name: "Auto Architects Draft",
+        description: "Automatically grabs a draft from your sacks when a puzzle is failed.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    autoArchitectDraft = false;
+
+    @SwitchProperty({
+        name: "Hide Soulweavers Skulls",
+        description: "Hides the skulls spawned by the soulweavers gloves.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    hideSoulweaverSkulls = false;
+
+    @SwitchProperty({
+        name: "Auto Ice Fill",
+        description: "Automatically completes the ice fill puzzle. (CREDITS TO ODTHEKING)",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    autoIceFill = false;
+
     // ---------------------------------------------------------------
     // Solvers
 
@@ -501,6 +525,22 @@ class Config {
         subcategory: "Misc"
     })
     fuckDiorite = false;
+
+    @SwitchProperty({
+        name: "Auto EDrag",
+        description: "Automatically equips your ender dragon pet in M7P5.",
+        category: "Floor 7",
+        subcategory: "M7"
+    })
+    autoEdrag = false;
+
+    @SwitchProperty({
+        name: "Relic Aura",
+        description: "Automatically picks up the relics when in range.",
+        category: "Floor 7",
+        subcategory: "M7"
+    })
+    relicAura = false;
 
     // ---------------------------------------------------------------
     // Kuudra

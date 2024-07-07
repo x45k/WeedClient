@@ -33,3 +33,5 @@ export function sendPlacementPacketWithStack(itemStack) {
 export const registerWhen = (trigger, dependency, debugInfo = { type: '', name: '' }) => {
     registers.push([trigger.unregister(), dependency, false, debugInfo]);
 }
+
+export const Vec3 = Java.type("net.minecraft.util.Vec3")
