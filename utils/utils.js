@@ -35,3 +35,19 @@ export const registerWhen = (trigger, dependency, debugInfo = { type: '', name: 
 }
 
 export const Vec3 = Java.type("net.minecraft.util.Vec3")
+
+export function lookAt(x, y, z) {
+    const player = Player.getPlayer();
+    const dx = x - player.getX();
+    const dy = y - (player.getY() + player.getEyeHeight());
+    const dz = z - player.getZ();
+    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+    const pitch = -Math.atan2(dy, distance) * 180 / Math.PI;
+    const yaw = Math.atan2(dz, dx) * 180 / Math.PI - 90;
+    player.setPitch(pitch);
+    player.setYaw(yaw);
+}
+
+export function rightClick() {
+    Client.getMinecraft().rightClickMouse();
+}
