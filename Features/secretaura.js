@@ -1,4 +1,4 @@
-import { C02PacketUseEntity, EntityArmorStand } from "../../BloomCore/utils/Utils";
+import { C02PacketUseEntity, TileEntityChest } from "../../BloomCore/utils/Utils";
 import Config from "../Config";
 import { Vec3, isInDungeon } from "../utils/utils";
 
@@ -6,13 +6,11 @@ register('tick', () => {
     if (!isInDungeon || !Config.secratAura) return;
 
     // Find and interact with levers and chests
-    let entities = World.getAllEntities();
+    let entities = World.getAllTileEntitiesOfType(TileEntityChest);
     for (let i = 0; i < entities.length; i++) {
         let e = entities[i];
-        if (e.getName().includes("tile.chest") || e.getName().includes("tile.lever")) {
-            if (Player.asPlayerMP.distanceTo(e) < 4) {  // Adjust the distance as needed
-                interactWithEntity(e);
-            }
+        if (Player.asPlayerMP.distanceTo(e) < 4) {  // Adjust the distance as needed
+            interactWithEntity(e);
         }
     }
 });
