@@ -142,6 +142,14 @@ class Config {
     // ---------------------------------------------------------------
     // General
 
+    /*@SwitchProperty({
+        name: "No Block",
+        description: "Removes the block animation when you right click a sword.",
+        category: "General",
+        subcategory: "Misc"
+    })
+    noBlockWithSword = false; */
+
     @SwitchProperty({
         name: "Auto GFS",
         description: "Gets specified items from your sacks.",
@@ -248,6 +256,14 @@ class Config {
         subcategory: "Bar Phase"
     })
     barPhase = false;
+
+    @SwitchProperty({
+        name: "Fire Freeze Timer",
+        description: "Notifies you when to fire freeze in the m3 boss fight.",
+        category: "Dungeons",
+        subcategory: "M3"
+    })
+    ffTimer = false;
 
     @SwitchProperty({
         name: "Blood Dialogue Skip",
@@ -561,6 +577,30 @@ class Config {
         subcategory: "Events"
     })
     fiveTimesTitanium = false;
+
+    @SwitchProperty({
+        name: "Mining Speed Boost",
+        description: "Notifies you when your mining speed boost ability is ready.",
+        category: "Mining",
+        subcategory: "General"
+    })
+    miningSpeedBoost = false;
+
+    @SwitchProperty({
+        name: "Mining Speed Boost Over",
+        description: "Notifies you when your mining speed boost ability is over.",
+        category: "Mining",
+        subcategory: "General"
+    })
+    miningSpeedBoostOver = false;
+
+    @SwitchProperty({
+        name: "Auto Renew Pass",
+        description: "Automatically renews your crystal hollows pass when it is about to expire.",
+        category: "Mining",
+        subcategory: "Crystal Hollows"
+    })
+    autoRenewPass = false;
 
     // ---------------------------------------------------------------
     // GUI

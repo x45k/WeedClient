@@ -25,3 +25,11 @@ export function createWaypoint(world, text, redval, greenval, blueval, posx, pos
         Tessellator.drawString(text, posx, posy+1, posz, -1157562624, true, 1, true)
     }
 }
+
+export function sendPlacementPacketWithStack(itemStack) {
+    Client.sendPacket(new C08PacketPlayerBlockPlacement(new BP(-1, -1, -1), 255, itemStack, 0, 0, 0))
+  }
+
+export const registerWhen = (trigger, dependency, debugInfo = { type: '', name: '' }) => {
+    registers.push([trigger.unregister(), dependency, false, debugInfo]);
+}
