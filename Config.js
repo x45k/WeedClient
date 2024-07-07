@@ -404,6 +404,14 @@ class Config {
     })
     hideSoulweaverSkulls = false;
 
+    @SwitchProperty({
+        name: "M7 Spots",
+        description: "Creates waypoints for where you need to go in M7.",
+        category: "Dungeons",
+        subcategory: "General"
+    })
+    m7Spots = false;
+
     // ---------------------------------------------------------------
     // Solvers
 
