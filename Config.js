@@ -404,14 +404,6 @@ class Config {
     })
     hideSoulweaverSkulls = false;
 
-    @SwitchProperty({
-        name: "Auto Ice Fill",
-        description: "Automatically completes the ice fill puzzle. (CREDITS TO ODTHEKING)",
-        category: "Dungeons",
-        subcategory: "General"
-    })
-    autoIceFill = false;
-
     // ---------------------------------------------------------------
     // Solvers
 
