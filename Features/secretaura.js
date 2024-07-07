@@ -3,7 +3,7 @@ import Config from "../Config";
 import { Vec3, isInDungeon } from "../utils/utils";
 
 register('step', () => {
-    if (!isInDungeon || !Config.secratAura) return;
+    if (!isInDungeon || !Config.secretAura) return;
 
     // Find and interact with levers and chests
     let entities = World.getAllTileEntitiesOfType(TileEntityChest);
