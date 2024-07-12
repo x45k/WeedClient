@@ -22,7 +22,7 @@ import {
 class Config {
     constructor() {
 
-        powderGui = new Gui()
+        
 
         this.initialize(this)
 
@@ -141,6 +141,8 @@ class Config {
     etherwarpOverlayColor = new Color(0, 1, 0, 1);
 
    */
+
+    powderGui = new Gui()
 
     // ---------------------------------------------------------------
     // General
@@ -676,6 +678,14 @@ class Config {
         subcategory: "Crystal Hollows"
     })
     autoRenewPass = false;
+
+    @SwitchProperty({
+        name: "Powder Display",
+        description: "Displays current powder",
+        category: "Mining",
+        subcategory: "Crystal Hollows"
+    })
+    powderDisplay = false;
 
     @ButtonProperty({
         name: "Move Chest Session",

@@ -7,4 +7,8 @@ export const data = new PogObject("Weed", {
   windowNamee: {
     name: ""
   },
+  powderAmounts : {
+    x: 0,
+    y: 0
+  },
 }, "data/data.json")
