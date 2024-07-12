@@ -21,6 +21,9 @@ import {
 })
 class Config {
     constructor() {
+
+        powderGui = new Gui()
+
         this.initialize(this)
 
         this.addDependency("Announce to guild", "Rng Announcer")
@@ -673,6 +676,17 @@ class Config {
         subcategory: "Crystal Hollows"
     })
     autoRenewPass = false;
+
+    @ButtonProperty({
+        name: "Move Chest Session",
+        description: "Moves the Powder GUI",
+        category: "Mining",
+        subcategory: "Crystal Hollows",
+        placeholder: "Move"
+    })
+    MovePowderGui() {
+        this.powderGui.open()
+    };
 
     // ---------------------------------------------------------------
     // GUI
