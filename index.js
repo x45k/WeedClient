@@ -1,3 +1,5 @@
+import "./Config"
+
 import "./Commands/hclip"
 import "./Commands/tpclip"
 import "./Commands/vclip"
@@ -55,7 +57,6 @@ import "./Features/hidesoulweaversskulls"
 import "./Features/autoedrag"
 import "./Features/relicaura"
 import "./Features/m7spots"
-import "./Features/autosell"
 import "./Features/blessingnotifier"
 import "./Features/secretaura"
 import "./Features/powderamounts"

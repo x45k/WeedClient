@@ -1,4 +1,4 @@
-import Config from "../Config"
+import config from "../Config"
 
 let ffCountdownTo = 0;
 
@@ -6,7 +6,7 @@ register("chat", () => {
     ffCountdownTo = Date.now() + 5000;
     let countdown = 5;
 
-    if (!Config.ffTimer) return;
+    if (!config().ffTimer) return;
 
     let countdownInterval = setInterval(() => {
         if (countdown > 0) {

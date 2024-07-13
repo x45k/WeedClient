@@ -1,5 +1,5 @@
 import { C02PacketUseEntity, EntityArmorStand } from "../../BloomCore/utils/Utils"
-import Config from "../Config"
+import config from "../Config"
 import { Vec3 } from "../utils/utils"
 
 let disabler = false
@@ -7,7 +7,7 @@ register('worldLoad', () => disabler = false)
 register("chat", () => disabler = true).setCriteria("[BOSS] Wither King: You.. again?")
 
 register('tick', () => {
-    if (disabler || !Config.relicAura) return;
+    if (disabler || !config().relicAura) return;
     let armorStands = World.getAllEntitiesOfType(EntityArmorStand);
     for (let i = 0; i < armorStands.length; i++) {
         let e = armorStands[i];

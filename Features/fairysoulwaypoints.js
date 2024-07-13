@@ -1,4 +1,4 @@
-import Config from "../Config"
+import config from "../Config"
 import { createWaypoint } from "../utils/utils"
 import { getEntitySkullTexture, EntityArmorStand} from "../../BloomCore/utils/Utils"
 
@@ -11,7 +11,7 @@ register("renderWorld", () => {
         let posz = Entity.getZ()
         if (getEntitySkullTexture(Entity) === null) return
         if (getEntitySkullTexture(Entity) !== soulString) return
-        if (!Config.showSouls) return
+        if (!config().showSouls) return
         createWaypoint("any", "Fairy Soul", 128, 0, 128, posx, posy, posz)
     })
 

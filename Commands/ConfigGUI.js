@@ -1,4 +1,4 @@
-import Config from "../Config";
+import Config from "../unusedconfig";
 
 register("command", () => {
     Config.openGUI()

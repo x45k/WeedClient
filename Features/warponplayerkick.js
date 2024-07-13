@@ -1,8 +1,8 @@
-import Config from '../Config';
+import config from "../Config"
 import { isInDungeon } from '../utils/utils';
 
 register("chat", (name) => {
-  if (Config.warpOnPlayerKick && isInDungeon()) {
+  if (config().warpOnPlayerKick && isInDungeon()) {
     new setTimeout(() => {
       ChatLib.chat("WARPING KICKED PLAYER BACK!");
       Thread.sleep(250)

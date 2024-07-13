@@ -1,11 +1,11 @@
-import Config from "../Config"
+import config from "../Config"
 import RenderLib from "../../RenderLib/index";
 
 let phase3 = false
 let queueRenderRed = []
 let queueRenderGreen = []
 register('renderWorld', () => {
-    if (!Config.termHighlight) return;
+    if (!config().termHighlight) return;
     queueRenderRed.forEach( (i) => {
         RenderLib.drawInnerEspBox(i.x + 0.5, i.y, i.z + 0.5, 1.05, 1.05, 1, 0, 0, 0.4, true); // Red box
         Tessellator.drawString('Inactive Terminal', i.x + 0.5, i.y + 1, i.z + 0.5, Renderer.color(255, 20, 0), true, 0.05, false)

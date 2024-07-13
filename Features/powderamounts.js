@@ -1,13 +1,39 @@
 import { registerWhen } from "../../BloomCore/utils/Utils";
-import Config from "../Config"
-import { data } from "../utils/data"
+import config, { myGui } from "../Config";
+import { data } from "../utils/data";
 
-const startingLine = "Gemstone:";
+let gemstoneInfo = '';
+let mithrilInfo = '';
+
+const extractGemstoneInfo = () => {
+    try {
+        TabList?.getNames()?.forEach(line => {
+            let match = line.removeFormatting().match(/Gemstone:\s*(.+)/);
+            if (match) {
+                gemstoneInfo = match[1];
+            }
+        });
+    } catch (e) {
+        gemstoneInfo = '';
+    }
+};
+
+const extractMithrilInfo = () => {
+    try {
+        TabList?.getNames()?.forEach(line => {
+            let match = line.removeFormatting().match(/Mithril:\s*(.+)/);
+            if (match) {
+                mithrilInfo = match[1];
+            }
+        });
+    } catch (e) {
+        mithrilInfo = '';
+    }
+};
 
 register("tick", () => {
-    const tabListLines = TabList.getNames().map(line => line.removeFormatting());
-    const matchingLine = tabListLines.find(line => line.startsWith(startingLine));
-
+    extractGemstoneInfo();
+    extractMithrilInfo();
     /* if (Config.MovePowderGui.isOpen() && time == 0) {
         new Text('Gemstone Found: ' + '69,420', data.powderCoords.x, data.powderCoords.y + 10).setShadow(true).setColor(Renderer.LIGHT_PURPLE).draw()
         new Text('Mithril Found: ' + '69,420', data.powderCoords.x, data.powderCoords.y + 20).setShadow(true).setColor(Renderer.GREEN).draw()
@@ -15,13 +41,13 @@ register("tick", () => {
 });
 
 register("dragged", (mx, my, x, y) => {
-    if (!Config.powderGui.isOpen()) return
-    data.powderAmounts.x = x
-    data.powderAmounts.y = y
-    data.save()
-})
+    if (!myGui.isOpen()) return;
+    data.powderAmounts.x = x;
+    data.powderAmounts.y = y;
+    data.save();
+});
 
 registerWhen(register("renderOverlay", () => {
-    if (!Config.powderDisplay) return
-    Renderer.drawString(matchingLine, data.powderAmounts.x, data.powderAmounts.y)
-}), () => Config.powderDisplay)
+    if (!config().powderDisplay) return;
+    Renderer.drawString(`&d&lGemstone Info: ${gemstoneInfo}\n&2&lMithril Info: ${mithrilInfo}`, data.powderAmounts.x, data.powderAmounts.y);
+}), () => config().powderDisplay);

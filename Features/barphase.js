@@ -1,4 +1,4 @@
-import Config from "../Config"
+import config from "../Config"
 
 register("step", runCommandOnIronBars);
 
@@ -30,7 +30,7 @@ function runCommandOnIronBars() {
   const blockInFront = World.getBlockAt(blockX, blockY, blockZ);
 
   
-  if (Object.values(blockInFront.getType()).indexOf('minecraft:iron_bars') > -1 && Config.barPhase) {
+  if (Object.values(blockInFront.getType()).indexOf('minecraft:iron_bars') > -1 && config().barPhase) {
     ChatLib.command("hc 0.7", true)
   }
 }

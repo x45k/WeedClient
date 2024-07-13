@@ -1,7 +1,7 @@
 import Dungeon from "../../BloomCore/dungeons/Dungeon"
 import { EntityArmorStand, EntityOtherPlayerMP } from "../../BloomCore/utils/Utils"
 import RenderLib from "../../RenderLib"
-import Config from "../Config"
+import config from "../Config"
 
 class Livid {
     constructor(woolMeta, name, color, entity, armorStand) {
@@ -26,7 +26,7 @@ const livids = [
 ]
 let livid = null
 register("tick", () => {
-    if (!Dungeon.inDungeon || !Config.lividSolver || Dungeon.floorNumber !== 5) return livid = null
+    if (!Dungeon.inDungeon || !config().lividSolver || Dungeon.floorNumber !== 5) return livid = null
     let wool = World.getBlockAt(5, 108, 43)
     if (!wool || wool.type.getID() !== 35) return livid = null
 
@@ -42,14 +42,14 @@ register("tick", () => {
 })
 
 register("renderWorld", () => {
-    if (Dungeon.inDungeon || Config.lividSolver || Dungeon.floorNumber == 5) {
+    if (Dungeon.inDungeon || config().lividSolver || Dungeon.floorNumber == 5) {
         if (!livid) return
         RenderLib.drawEspBox(livid.entity.getRenderX(), livid.entity.getRenderY(), livid.entity.getRenderZ(), 0.6, 1.8, 0, 1, 0, 1, false)
     }
 })
 
 register("renderEntity", (entity, pos, pt, event) => {
-    if (Dungeon.inDungeon || Config.lividSolver || Dungeon.floorNumber == 5) {
+    if (Dungeon.inDungeon || config().lividSolver || Dungeon.floorNumber == 5) {
         if (!livid || !entity.getName().includes("Livid")) return
         if ([livid.entity.getName(), livid.armorStand.getName()].some(a => entity.getName() == a)) return
         cancel(event)

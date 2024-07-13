@@ -1,9 +1,9 @@
 import Dungeon from "../../BloomCore/dungeons/Dungeon"
-import Config from "../Config"
+import config from "../Config"
 import { createWaypoint } from "../utils/utils"
 
 register("renderWorld", () => {
-        if (!Config.m7Spots && Dungeon.floorNumber !== 7) return
+        if (!config().m7Spots && Dungeon.floorNumber !== 7) return
         createWaypoint("Dungeons", "Decoy", 128, 0, 128, 37, 15, 44)
         createWaypoint("Dungeons", "Decoy", 128, 0, 128, 90, 12, 100)
         createWaypoint("Dungeons", "Decoy", 128, 0, 128, 21, 12, 88)

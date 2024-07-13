@@ -1,4 +1,4 @@
-import Config from "../Config"
+import config from "../Config"
 
 // Auto Edrag
 let p4Done = false
@@ -10,7 +10,7 @@ register("chat", () => {
 }).setCriteria("[BOSS] Wither King: You.. again?")
 
 register('tick', (ticks) => {      
-    if (!Config.autoEdrag) return
+    if (!config().autoEdrag) return
     if (!Client.currentGui.get()) {
         ChatLib.command('pet')
         ChatLib.chat("Trying to equip Ender Dragon pet")

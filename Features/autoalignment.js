@@ -1,5 +1,5 @@
 import { EntityItemFrame, MouseEvent, getDistanceToCoord, getEntityXYZ, registerWhen } from "../../BloomCore/utils/Utils"
-import Config from "../Config"
+import config from "../Config"
 
 const solutions = [
     [7,7,7,7,9,1,9,9,9,9,1,3,3,3,3,9,9,9,9,1,9,7,7,7,1],
@@ -102,7 +102,7 @@ const clickFrame = (index, clicks) => {
 }
 
 register("tick", () => {
-    if (!Config.autoAlign || getDistanceToCoord(...deviceStandLocation) > 10) {
+    if (!config().autoAlign || getDistanceToCoord(...deviceStandLocation) > 10) {
         currentFrames = null
         remainingClicks.clear()
         solution = null
@@ -154,7 +154,7 @@ registerWhen(register(MouseEvent, (event) => {
 
     const remaining = getClicksForRotation(currentFrames[index], solution[index])
     if (remaining == 0) remainingClicks.delete(index)
-}), () => Config.autoAlign && currentFrames && solution)
+}), () => config().autoAlign && currentFrames && solution)
 
 registerWhen(register("renderWorld", () => {
     for (let e of remainingClicks.entries()) {

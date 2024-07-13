@@ -1,7 +1,7 @@
-import Config from "../Config"
+import config from "../Config"
 
 const architect = (player) => {
-    if (!Config.autoArchitectDraft) return
+    if (!config().autoArchitectDraft) return
 
     // Some delay since you can't use the command in combat
     Client.scheduleTask(30, () => {

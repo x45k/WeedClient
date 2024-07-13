@@ -1,4 +1,4 @@
-import Config from "../Config"
+import Config from "../unusedconfig"
 
 const blessings = [
     /^DUNGEON BUFF! .+ found a Blessing of .+!$/,

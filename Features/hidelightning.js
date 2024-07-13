@@ -1,4 +1,4 @@
-import Config from "../Config"
+import Config from "../unusedconfig"
 
 const EntityLightningBolt = Java.type("net.minecraft.entity.effect.EntityLightningBolt")
 

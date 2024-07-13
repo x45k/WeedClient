@@ -1,11 +1,11 @@
-import Config from "../Config";
+import config from "../Config"
 
 let startTimer = null;
 let clearBloodTimer = null;
 let textXClearBlood = null;
 
 register("chat", () => {
-  if (!Config.bloodDialogueSkip) return;
+  if (!config().bloodDialogueSkip) return;
   const currentTime = Date.now();
 
   if (startTimer === null) {
@@ -23,7 +23,7 @@ register("chat", () => {
       }
 
       if (currentTime >= clearBloodTimer) {
-        setTitle('CLEAR BLOOD!', "", 10, 100, 10, 66);
+        Client.showTitle('CLEAR BLOOD!', "", 10, 100, 10);
       }
     }
   }

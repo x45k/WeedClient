@@ -1,4 +1,4 @@
-import Config from "../Config"
+import Config from "../unusedconfig"
 
 register("Chat", (event) => {
             if (Config.fiveTimesTitanium) {

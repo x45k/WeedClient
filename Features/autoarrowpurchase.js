@@ -1,9 +1,9 @@
-import Config from "../Config";
+import config from "../Config"
 
 let lastclick = new Date().getTime()-2000
 let clicked = false
 register("tick", () => {
-    if (Config.autoPurchaseArrows || !clicked) {
+    if (config().autoPurchaseArrows && !clicked) {
         let inv = Player.getContainer();
         let n = inv.getName();
         new Thread(() => {
