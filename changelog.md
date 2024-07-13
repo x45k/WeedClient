@@ -1,8 +1,6 @@
-- §aAdded: This
-- §aAdded: Is
-- §aAdded: An
-- §aAdded: Example!
+- §aAdded: changelog
+- §aAdded: sayinchat command so you can make things said in §achat (& codes work with it!)
  
-- §eImproved: I wonder what was improved...
+- §eImproved: the gui cause now it doesnt go phsyco mode
  
-- §cRemoved: Wow something was removed!
+- §cRemoved: auto sell

@@ -1,19 +1,19 @@
-import Config from "../Config";
+import config from "../Config";
 
-if (Config.kuudraNoKeyNotifier) {
+if (config().kuudraNoKeyNotifier) {
     register("chat", () => {
-        setTitle(`YOU DO NOT HAVE A KUUDRA KEY!`, "", 10, 50, 10, 60);
+        Client.showTitle(`YOU DO NOT HAVE A KUUDRA KEY!`, "", 10, 50, 10);
     }).setCriteria("WARNING: You do not have a key for this tier in your inventory, you will not be able to claim rewards.");
 }
 
-if (Config.kuudraSupplyCratesNotifier) {
+if (config().kuudraSupplyCratesNotifier) {
     register("chat", () => {
         setTitle(`SUPPLY CRATES DROPPED!`, "", 10, 100, 10, 63);
     }).setCriteria("[NPC] Elle: Not again!");
 }
 
 register("chat", (player, percentage) => {
-    if (Config.kuudraFuelCellsNotifier) {
+    if (config().kuudraFuelCellsNotifier) {
         switch (percentage) {
             case "100":
                 setTitle('100% [IIII]', "", 10, 100, 10, 66);
@@ -31,7 +31,7 @@ register("chat", (player, percentage) => {
     }
 }).setCriteria("${player} recovered a Fuel Cell and charged the Ballista! (${percentage}%)");
 
-if (Config.kuudraStunnedNotifier) {
+if (config().kuudraStunnedNotifier) {
     register("chat", () => {
         setTitle(`KUUDRA HAS BEEN STUNNED!`, "", 10, 100, 10, 69);
     }).setCriteria("{player} destroyed one of Kuudra's pods!");

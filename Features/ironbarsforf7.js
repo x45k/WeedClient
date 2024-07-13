@@ -1,4 +1,4 @@
-import Config from "../unusedconfig"
+import config from "../Config"
 import { isInDungeon } from '../utils/utils'
 import Dungeon from "../../BloomCore/dungeons/Dungeon"
 

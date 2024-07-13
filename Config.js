@@ -5,7 +5,7 @@ const schemePath = "data/ColorScheme.json"
 
 export const myGui = new Gui()
 
-const CHANGELOG = `# §bWeed Client v1\n ${FileLib.read("Amaterasu", "changelog.md")}`
+const CHANGELOG = `# §bWeed Client v1.1.0\n ${FileLib.read("WeedClient", "changelog.md")}`
 
 config
 // General
@@ -14,24 +14,6 @@ config
     configName: "ghostKeybind",
     title: "Ghost Bind",
     description: "The keybind to create ghost blocks (CURRENTLY DOES NOT WORK DUE TO AMATERASU NOT FULLY FINISHING THIS FEATURE)"
-})
-.addSwitch({
-    category: "General",
-    configName: "powderDisplay",
-    title: "Powder Display",
-    description: "blah blah blah blah",
-  })
-.addButton({
-    category: "General",
-    configName: "powderGui",
-    title: "Powder GUI",
-    description: "blah blah blah",
-    onClick() {
-        myGui.open()
-    },
-    shouldShow(config) {
-        return config.powderDisplay
-    }
 })
 .addSwitch({
     category: "General",
@@ -121,6 +103,13 @@ config
 })
 .addSwitch({
     category: "General",
+    configName: "autoHarp",
+    title: "Auto Harp",
+    description: "Automatically completes melodys harp (many thanks to azaelmew)",
+    subcategory: "Misc"
+})
+.addSwitch({
+    category: "General",
     configName: "showSouls",
     title: "Fairy Souls",
     description: "Show waypoints to fairy souls [AUTO UPDATES]\n&4&lMay not show waypoints if souls are not rendered.",
@@ -143,6 +132,13 @@ config
     title: "Fire Freeze Timer",
     description: "Notifies you when to fire freeze in the m3 boss fight",
     subcategory: "M3"
+})
+.addSwitch({
+    category: "Dungeons",
+    configName: "autoRejoinDungeons",
+    title: "Auto Rejoin",
+    description: "Auto rejoins dungeons when they end (many thanks to xef addons)",
+    subcategory: "General"
 })
 .addSwitch({
     category: "Dungeons",
@@ -460,7 +456,6 @@ config
         return config.kuudraNotifier
     }
 })
-
 .addSwitch({
     category: "Kuudra",
     configName: "kuudraSupplyCratesNotifier",
@@ -471,7 +466,6 @@ config
         return config.kuudraNotifier
     }
 })
-
 .addSwitch({
     category: "Kuudra",
     configName: "kuudraFuelCellsNotifier",
@@ -482,7 +476,6 @@ config
         return config.kuudraNotifier
     }
 })
-
 .addSwitch({
     category: "Kuudra",
     configName: "kuudraStunnedNotifier",
@@ -494,7 +487,6 @@ config
         return config.kuudraNotifier
     }
 })
-
 .addSwitch({
     category: "Kuudra",
     configName: "vanqNotifier",
@@ -505,9 +497,169 @@ config
         return config.kuudraNotifier
     }
 })
+.addSwitch({
+    category: "Kuudra",
+    configName: "enableClassBuyer",
+    title: "Class Buyer",
+    description: "Automatically purchases your class when you first open shop.",
+    subcategory: "Class"
+})
+.addMultiCheckbox({
+    category: "Kuudra",
+    configName: "enableClassBuyer",
+    title: "Class",
+    description: "Select class to purchase.",
+    subcategory: "Class",
+    shouldShow(config) {
+        return config.enableClassBuyer
+    },
+    options: [
+        {
+            configName: "autoSpecialist",
+            title: "Specialist",
+            value: false
+        },
+        {
+            configName: "autoSupport",
+            title: "Support",
+            value: false
+        },
+        {
+            configName: "autoCrowdControl",
+            title: "Crowd Control",
+            value: false
+        },
+        {
+            configName: "autoCannoneer",
+            title: "Cannoneer",
+            value: false
+        }
+    ]
+})
+
+// ---------------------------------------------------------------
+// Mining
+
+.addSwitch({
+    category: "Mining",
+    configName: "fiveTimesTitanium",
+    title: "5x Titanium",
+    description: "Notifies you when the 5x titanium event is active",
+    subcategory: "Events"
+})
+.addSwitch({
+    category: "Mining",
+    configName: "miningSpeedBoost",
+    title: "Mining Speed Boost",
+    description: "Notifies you when your mining speed boost ability is ready",
+    subcategory: "General"
+})
+.addSwitch({
+    category: "Mining",
+    configName: "miningSpeedBoostOver",
+    title: "Mining Speed Boost Over",
+    description: "Notifies you when your mining speed boost ability is over",
+    subcategory: "General"
+})
+.addSwitch({
+    category: "Mining",
+    configName: "autoRenewPass",
+    title: "Auto Renew Pass",
+    description: "Automatically renews your crystal hollows pass when it is about to expire",
+    subcategory: "Crystal Hollows"
+})
+.addSwitch({
+    category: "Mining",
+    configName: "powderDisplay",
+    title: "Powder Display",
+    description: "Shows how much powder you have of both gemstone and mithril",
+    subcategory: "Crystal Hollows"
+  })
+.addButton({
+    category: "Mining",
+    configName: "powderGui",
+    title: "Powder GUI",
+    description: "Move the position of the powder info",
+    subcategory: "Crystal Hollows",
+    onClick() {
+        myGui.open()
+    },
+    shouldShow(config) {
+        return config.powderDisplay
+    }
+})
+
+// ---------------------------------------------------------------
+// Party Finder
+
+.addSwitch({
+    category: "Party Finder",
+    configName: "enableBlacklist",
+    title: "Enable Blacklist",
+    description: "Kicks players who's names are added to the blacklist",
+    subcategory: "Blacklist"
+})
+.addTextInput({
+    category: "Party Finder",
+    configName: "playerBlacklistNames",
+    title: "Party Blacklist",
+    description: "Auto kicks names that you choose, separated by spaces",
+    category: "Party Finder",
+    subcategory: "Blacklist",
+    placeholder: "x45k",
+    shouldShow(config) {
+        return config.enableBlacklist
+    }
+})
+.addSwitch({
+    category: "Party Finder",
+    configName: "partyFullAlert",
+    title: "Party Finder Full",
+    description: "Notifies you when your party is full",
+    subcategory: "General"
+})
+
+// ---------------------------------------------------------------
+// Testing
+
+.addMultiCheckbox({
+    category: "Kuudra",
+    configName: "testingForKuudraMultiBox",
+    title: "Class v2",
+    description: "Select class to purchase.",
+    subcategory: "Class",
+    shouldShow(config) {
+        return config.enableClassBuyer
+    },
+    options: [
+        {
+            configName: "autoSpecialistv2",
+            title: "Specialist",
+            value: false,
+            registerListener() {
+                ChatLib.chat('multibox is fucking working bitch')
+            }
+        },
+        {
+            configName: "autoSupportv2",
+            title: "Support",
+            value: false
+        },
+        {
+            configName: "autoCrowdControlv2",
+            title: "Crowd Control",
+            value: false
+        },
+        {
+            configName: "autoCannoneerv2",
+            title: "Cannoneer",
+            value: false
+        }
+    ]
+})
 
 const setting = new Settings("Weed Client", config, schemePath)
-    .setCommand("weedd", ["crate"])
+    .setCommand("weed", ["weedclient"])
 
     .addMarkdown("Changelog", CHANGELOG)
 

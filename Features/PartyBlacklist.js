@@ -1,8 +1,8 @@
-import Config from "../unusedconfig"
+import config from "../Config"
 import Party from "../../BloomCore/Party"
 
 const doPlayerKick = (player) => {
-    if (Config.playerBlacklistNames.includes(player)) {
+    if (config().playerBlacklistNames.includes(player)) {
         setTimeout(() => {
             ChatLib.command(`p kick ${player}`)
             ChatLib.chat(`&3Kicked &a${player} &3as they are blacklisted!`)
@@ -16,7 +16,7 @@ const doPlayerKick = (player) => {
 
 register("chat", (player, classs) => {
     if (Party.leader !== Player.getName()) return
-    if (Config.enableBlacklist !== true) return
+    if (config().enableBlacklist !== true) return
 
     doPlayerKick(player)
     

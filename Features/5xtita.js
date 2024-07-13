@@ -1,7 +1,7 @@
-import Config from "../unusedconfig"
+import config from "../Config"
 
 register("Chat", (event) => {
-            if (Config.fiveTimesTitanium) {
+            if (config().fiveTimesTitanium) {
                 Client.showTitle('&r&9&lx5 Titanium!', "", 10, 100, 10);
             }
         }

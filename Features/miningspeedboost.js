@@ -1,7 +1,7 @@
-import Config from "../unusedconfig"
+import config from "../Config"
 
 register("Chat", (event) => {
-            if (Config.miningSpeedBoost) {
+            if (config().miningSpeedBoost) {
                 Client.showTitle('&r&9&lBoost Available!', "", 10, 100, 10);
             }
         }
