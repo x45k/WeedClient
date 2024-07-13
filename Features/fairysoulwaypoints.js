@@ -14,6 +14,4 @@ register("renderWorld", () => {
         if (!config().showSouls) return
         createWaypoint("any", "Fairy Soul", 128, 0, 128, posx, posy, posz)
     })
-
-
 })

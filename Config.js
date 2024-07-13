@@ -110,6 +110,13 @@ config
 })
 .addSwitch({
     category: "General",
+    configName: "hideLightning",
+    title: "Hide Lightning",
+    description: "Hides lightning.",
+    subcategory: "Misc"
+})
+.addSwitch({
+    category: "General",
     configName: "showSouls",
     title: "Fairy Souls",
     description: "Show waypoints to fairy souls [AUTO UPDATES]\n&4&lMay not show waypoints if souls are not rendered.",
